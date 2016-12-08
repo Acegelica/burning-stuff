@@ -13,6 +13,24 @@ public class PeoplePopulation{
   }
   
   /**
+  * Getters and setters get introduced in here
+  */
+  
+  public double getPopWCookstove(){
+    return popWCookstove;
+  }
+  public double getPopWOut(){
+    return popWCookstove;
+  }
+  //The setters should see no use as they are not how the class is supposed to
+  //interact with these values
+  public void setPopWCookstove(){
+    return popWCookstove;
+  }
+  public void setPopWOut(){
+    return popWCookstove;
+  }
+  /**
   * This method has each of the populations grow from what would be considered
   * natural factors, such as avalibilty of food, avoiding desieses, and having
   * clean vs. unclean air
