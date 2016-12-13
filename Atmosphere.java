@@ -36,4 +36,9 @@ public class Atmosphere{
     return temperature;
   }
 
+  public void increase(){
+    //Like very seriously this method and related methods are like the core of the 
+    //model and this is the main thing that they need to have done for the thing
+  }
+  
 }
