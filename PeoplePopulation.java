@@ -41,6 +41,13 @@ public class PeoplePopulation{
                   //May have variables of the growthrate that can be inputed at the beginning of the creation of the object
     popWOut       //Similar to the other section, we need to decide how to have the growth be done,
                   //Talking about like exponential or logisitic growth or some other model of growth
+    //Just making a note that the population doesn't actually care about the rest of the global population since we
+    //Are only tracking the delta T with the adjustments, not the actual current T.
+    //Unfortinantly, the current formula I have to calculate delta T requires knowledge of the current T.
+    // dT = [5.35*ln(PPMC/PPMS)]/[4*CT^4 * stefan] * CT;
+    // change in temperature equals the change in flux divided by 4 times the flux times current temprature
+      // where the change in flux is given by 5.35 times the natural log of the quotient between the current paarts per million of CO2 and the starting parts per million
+      // and flux is given by the current temperature to the 4th power and multiplying by the Stefan constant
   }
 
 
