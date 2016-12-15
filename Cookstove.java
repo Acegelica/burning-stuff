@@ -4,6 +4,8 @@ public class Cookstove {
 	/**
 	* Class that represents a type of stove and the relative
 	* information assossiated with the type of stove
+	*\\Will make note here of the final types of stoves we want to use in the end
+	*
 	*/
 	private double amountOfFuelNeed;
 	private double CO2ReleasedPerUse;
