@@ -7,16 +7,16 @@ public class Cookstove {
 	*\\Will make note here of the final types of stoves we want to use in the end
 	*
 	*/
-	private double amountOfFuelNeed;
-	private double CO2ReleasedPerUse;
+	private double gramsOfFuelPerMegaJouel;
+	private double CO2ReleasedMJ; //Mega Jouel
 	private double costPerStove;
-	private double howManyPeopleAUseFeeds; //As in how many people cn eat from one meal from it
+	private double MJPerPersonPerMeal; //How many Mega jouels are needed to cook a meal for 1 person in where we are talking about, per meal
 	
-	public Cookstove(double aofn, double co2rpu, double cps, double hmpauf){
-		amountOfFuelNeed = aofn;
-		CO2ReleasedPerUse = co2rpu;
+	public Cookstove(double gofpmj, double co2rmj, double cps, double mjpppm){
+		gramsOfFuelPerMegaJouel = gofpmj;
+		CO2ReleasedMJ = co2rmj;
 		costPerStove = cps;
-		howManyPeopleAUseFeeds = hmpauf;
+		MJPerPersonPerMeal = mjpppm;
 	}
 	
 	public Cookstove(){
