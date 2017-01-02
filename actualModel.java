@@ -8,16 +8,29 @@ public class actualModel{
     * Stuff does end up getting inputed later when we get to that
     * stage of the game
     */
-    Atmosphere atmos = new Atmosphere();
-    Cookstove stove = new Cookstove();
-    PeoplePopulation peoples = new PeoplePopulation();
+    Scanner reader = new Scanner("atmosphereInfo.csv");
+    String[] atmostic = reader.nextLine().split(",");
+    Atmosphere atmos = new Atmosphere(Doule.valueOf(atmostic[0]), Double.valueOf(atmostic[1]));
+    
+    reader = new Scanner("cookstove values.csv")
+    String[] cooktotic = reader.nextLine().split(",");
+    Cookstove stove = new Cookstove(0, Double.valueOf(cooktotic[1]), Double.valueOf(cooktotic[2]), 104.4); //MJ/year for rwanda
+    
+    reader = new Scanner("peoplesInfo.csv");
+    String[] peptotic = reader.nextLine().split(",");
+    PeoplePopulation peoples = new PeoplePopulation(Double.valueOf(peptotic[0]), Double.valueOf(peptotic[1]));
+    
+    reader.close();
     
     FileWriter moneySpent = new FileWriter("Budget.csv");
     FileWriter CO2 = new FileWriter("AtmosphericCO2.csv");
     FileWriter temps = new FileWriter("TemperatureChanges.csv");
     
     for (int i = 0; i <= years; i++){ //Years will be the required number of years the model wants to run for
-      moneySpent.println(idk something goes here);
+      moneySpent.println(peoples.getPopWOut() * .1); //10% conversion happens
+      peoples.setPopWCookstove(peoples.getPopWCookstove() + peoples.getPopWOut()*.1);
+      peoples.setPopWOut(peoples.getPopWOut()*.9);
+      
       CO2.println(atmos.getCO2());
       
       temps.println(atmos.getDeltaTemp()); //Also increments the temperature
