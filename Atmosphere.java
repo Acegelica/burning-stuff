@@ -4,8 +4,10 @@ public class Atmosphere{
 * as it will be affected by the things changing in the model
 */
   
-  private double CO2;
+  private double CO2; //this is in ppm
+  private double prevCO2;
   private double temperature;
+  public double final STEFAN=5.670367*Math.pow(10, -8);
   
   public Atmosphere(){
     this(0,0);
@@ -13,7 +15,13 @@ public class Atmosphere{
   
   public Atmosphere(double startingCO2, double startingTemperature){
     CO2 = startingCO2;
+    prevCO2=startingCO2;
     temperature = startingTemperature;
+  }
+  
+  public void addCO2(double addedCO2){
+    prevCO2=CO2;
+    setCO2(addedCO2+CO2);
   }
   
   /*
@@ -31,21 +39,20 @@ public class Atmosphere{
   public double getCO2(){
     return CO2;
   }
-
-  public double getTemp(){
+  /**
+  also updates temperature
+  */
+  public double getDeltaTemp(){
+    double dT=(5.35*Math.log(CO2/prevCO2))/(4*Math.pow(temperature, 4)*STEFAN) * temperature;
+    temperature+=dT;
     //Just making a note that the population doesn't actually care about the rest of the global population since we
     //Are only tracking the delta T with the adjustments, not the actual current T.
     //Unfortinantly, the current formula I have to calculate delta T requires knowledge of the current T.
     // dT = [5.35*ln(PPMC/PPMS)]/[4*CT^4 * stefan] * CT;
     // change in temperature equals the change in flux divided by 4 times the flux times current temprature
-      // where the change in flux is given by 5.35 times the natural log of the quotient between the current paarts per million of CO2 and the starting parts per million
+      // where the change in flux is given by 5.35 times the natural log of the quotient between the current parts per million of CO2 and the starting parts per million
       // and flux is given by the current temperature to the 4th power and multiplying by the Stefan constant
-    return temperature;
-  }
-
-  public void increase(){
-    //Like very seriously this method and related methods are like the core of the 
-    //model and this is the main thing that they need to have done for the thing
+    return dT;
   }
   
 }
