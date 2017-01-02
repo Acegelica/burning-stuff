@@ -34,4 +34,10 @@ public class actualModel{
     temps.close();
   }
 
+  private double calcCO2(PeoplePopulation peoples, Cookstove stove){
+    double pureCO2 = peoples.getPopWCookstove() * stove.getCO2PerPerson();
+    double ppmCO2 = pureCO2 * 1000 / (3.845 * Math.pow(10, 21));
+    return ppmCO2;
+  }
+  
 }
