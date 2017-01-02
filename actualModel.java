@@ -36,7 +36,7 @@ public class actualModel{
       temps.println(atmos.getDeltaTemp()); //Also increments the temperature
       
       //Now the yearly increment section happens
-      double amountOfCO2 = peoples.calcCO2(stove);
+      double amountOfCO2 = calcCO2(peoples ,stove);
       atmos.addCO2(amountOfCO2);
       peoples.grow();
       
@@ -47,7 +47,7 @@ public class actualModel{
     temps.close();
   }
 
-  private double calcCO2(PeoplePopulation peoples, Cookstove stove){
+  private static double calcCO2(PeoplePopulation peoples, Cookstove stove){
     double pureCO2 = peoples.getPopWCookstove() * stove.getCO2PerPerson();
     double ppmCO2 = pureCO2 * 1000 / (3.845 * Math.pow(10, 21));
     return ppmCO2;
