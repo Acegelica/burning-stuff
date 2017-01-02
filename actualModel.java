@@ -19,7 +19,8 @@ public class actualModel{
     for (int i = 0; i <= years; i++){ //Years will be the required number of years the model wants to run for
       moneySpent.println(idk something goes here);
       CO2.println(atmos.getCO2());
-      temps.println(atmos.calcTempChange());
+      
+      temps.println(atmos.getDeltaTemp()); //Also increments the temperature
       
       //Now the yearly increment section happens
       double amountOfCO2 = peoples.calcCO2(stove);
