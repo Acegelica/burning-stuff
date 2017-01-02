@@ -7,6 +7,7 @@ public class Cookstove {
 	*\\Will make note here of the final types of stoves we want to use in the end
 	*
 	*/
+	//format of input file: name, gCO/MJ, cost, notes
 	private double gramsOfFuelPerMegaJouel;
 	private double CO2ReleasedMJ; //Mega Jouel
 	private double costPerStove;
