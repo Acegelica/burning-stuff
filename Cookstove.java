@@ -11,7 +11,7 @@ public class Cookstove {
 	private double gramsOfFuelPerMegaJouel;
 	private double CO2ReleasedMJ; //Mega Jouel
 	private double costPerStove;
-	private double MJPerPersonPerMeal; //How many Mega jouels are needed to cook a meal for 1 person in where we are talking about, per meal
+	private double MJPerPersonPerYear; //How many Mega jouels are needed to cook a meal for 1 person in where we are talking about, per meal
 	
 	public Cookstove(double gofpmj, double co2rmj, double cps, double mjpppm){
 		gramsOfFuelPerMegaJouel = gofpmj;
