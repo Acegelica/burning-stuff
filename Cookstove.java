@@ -23,16 +23,11 @@ public class Cookstove {
 		this(0, 0, 0, 0);
 	}
 
-
-	/**
-	 * Only takes into account the CO2 from the cookstoves
-	 * 
-	 * @author Skyler Matuska
-	 * @return the amount of CO2 added to the air by the current number of
-	 *         cookstoves distributed.
-	 */
-	public double newCO2level() {
-		// TODO
-		return 0;
+	public double getPrice(){
+		return costPerStove;	
+	}
+	
+	public double getCO2PerPerson(){
+		return CO2ReleasedMJ * MJPerPersonPerMeal;	
 	}
 }
