@@ -1,4 +1,4 @@
-package //Will be made when we get the file directory done
+package project;
 
 public class PeoplePopulation{
 
