@@ -1,4 +1,4 @@
-package firewoooo;
+package project;
 
 public class Cookstove {
 	/**
