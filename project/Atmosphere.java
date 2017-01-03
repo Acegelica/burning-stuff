@@ -1,3 +1,5 @@
+package project;
+
 public class Atmosphere{
 /**
 * This class represents the information about the atmosphere
