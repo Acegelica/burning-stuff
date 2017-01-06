@@ -1,4 +1,4 @@
-package project;
+package pack;
 
 public class Atmosphere{
 /**
